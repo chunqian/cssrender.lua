@@ -43,3 +43,89 @@ cB {
 }
 style:render()
 ```
+
+```json
+{
+  "instance": {
+    "context": {},
+    "config": {},
+    "__styleSheet": {}
+  },
+  "$": {
+    "$": null
+  },
+  "props": null,
+  "children": [
+    {
+      "instance": {
+        "context": {},
+        "config": {},
+        "__styleSheet": {}
+      },
+      "$": ".disabled",
+      "props": {
+        "opacity": 0.4,
+        "filter": "alpha(opacity=40)",
+        "cursor": "default",
+        "MsPointerEvents": "none",
+        "PointerEvents": "none"
+      },
+      "children": null,
+      "els": []
+    },
+    {
+      "instance": {
+        "context": {},
+        "config": {},
+        "__styleSheet": {}
+      },
+      "$": "container",
+      "props": {
+        "width": "100%"
+      },
+      "children": [
+        {
+          "instance": {
+            "context": {},
+            "config": {},
+            "__styleSheet": {}
+          },
+          "$": "&_left, &_right",
+          "props": {
+            "width": "50%"
+          },
+          "children": null,
+          "els": []
+        },
+        {
+          "instance": {
+            "context": {},
+            "config": {},
+            "__styleSheet": {}
+          },
+          "$": "&.dark",
+          "props": null,
+          "children": [
+            {
+              "instance": {
+                "context": {},
+                "config": {},
+                "__styleSheet": {}
+              },
+              "$": "&_left, &_right",
+              "props": {
+                "backgroundColor": "black"
+              },
+              "children": null,
+              "els": []
+            }
+          ],
+          "els": []
+        }
+      ],
+      "els": []
+    }
+  ],
+  "els": []
+}
+```
