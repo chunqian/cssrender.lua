@@ -4,6 +4,7 @@ css in lua
 ## lua 
 ```lua
 local css_render = require("cssr")
+local cB = css_render().c
 local style = 
 cB {
   cB {
