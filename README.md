@@ -109,12 +109,12 @@ data-table {
   font-size: var(--n-font-size);
   display: flex;
   position: relative;
-  ----n--merged--th--color: var(--n-th-color);
-  ----n--merged--td--color: var(--n-td-color);
-  ----n--merged--border--color: var(--n-border-color);
-  ----n--merged--th--color--hover: var(--n-th-color-hover);
-  ----n--merged--td--color--hover: var(--n-td-color-hover);
-  ----n--merged--td--color--striped: var(--n-td-color-striped);
+  --n-merged-th-color: var(--n-th-color);
+  --n-merged-td-color: var(--n-td-color);
+  --n-merged-border-color: var(--n-border-color);
+  --n-merged-th-color-hover: var(--n-th-color-hover);
+  --n-merged-td-color-hover: var(--n-td-color-hover);
+  --n-merged-td-color-striped: var(--n-td-color-striped);
 }
 
 data-table data-table-wrapper {

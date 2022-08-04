@@ -298,8 +298,8 @@ local function kebabCase(pattern)
   patternTbl = string.toTable(pattern)
   pattern = ""
   for _, pat in pairs(patternTbl) do
-    local ret = string.match(pat, "%l")
-    if ret == nil then
+    local ret = string.match(pat, "%u")
+    if ret ~= nil then
       pattern = pattern .. "-" .. string.lower(pat)
     else
       pattern = pattern .. pat
