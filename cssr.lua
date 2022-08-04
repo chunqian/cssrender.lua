@@ -16,7 +16,7 @@ function Tbl(t)
 end
 
 function Str(s)
-  setmetatable(s, { __index = string })
+  -- setmetatable(s, { __index = string })
   return s
 end
 
