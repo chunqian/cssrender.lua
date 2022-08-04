@@ -1,3 +1,10 @@
+--[[---------------------------------------------------------
+    name: cssr.lua
+    author: shenchunqian
+    version: 1.0
+    created: 2022-07-27
+-----------------------------------------------------------]]
+
 -- Lua Library inline imports
 
 local string = string
@@ -313,14 +320,16 @@ local function unwrapProperty(prop, indent)
     indent = "  "
   end
   if type(prop) == "table" and prop ~= nil then
-    return " {\n" .. objectEntries(prop):entriesMap(function(_, v)
-      return indent .. "  " .. kebabCase(v[1]) .. ": " .. tostring(v[2]) .. ";"
-    end):join("\n") .. "\n" .. indent .. "}"
+    return 
+      " {\n" .. 
+      objectEntries(prop):entriesMap(function(_, v)
+        return indent .. "  " .. kebabCase(v[1]) .. ": " .. tostring(v[2]) .. ";"
+      end):join("\n") .. "\n" .. indent .. "}"
   end
   return ": " .. tostring(prop) .. ";"
 end
 
---- unwrap properties
+-- unwrap properties
 local function unwrapProperties(props, instance, params)
   if type(props) == "function" then
     return props(nil, {context = instance.context, props = params})
@@ -500,7 +509,7 @@ local function wrappedRender(self, props)
   return render(self, self.instance, props)
 end
 
---- CNode
+-- CNode
 local function createCNode(instance, cash, props, children)
   return {
     instance = instance,
