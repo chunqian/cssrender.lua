@@ -100,7 +100,7 @@ cR {
               common.fadeInScaleUpTransition {
                 transformOrigin = "inherit",
                 duration = ".2s",
-                enterScale = ".9",
+                enterScale = .9,
                 originalTransform = "translateX(-50%) translateY(-50%)",
                 originalTransition = "",
               }
