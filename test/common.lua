@@ -1,3 +1,9 @@
+--[[---------------------------------------------------------
+    name: common.lua
+    author: shenchunqian
+    created: 2022-07-27
+-----------------------------------------------------------]]
+
 local css_render = require("../cssr")
 local cR = css_render().c
 

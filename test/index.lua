@@ -1,3 +1,12 @@
+--[[---------------------------------------------------------
+    name: index.lua
+    author: shenchunqian
+    created: 2022-07-27
+-----------------------------------------------------------]]
+
+-- add path
+package.path = package.path .. ";../?.lua"
+
 local css_render = require("../cssr")
 local cR = css_render().c
 
@@ -95,7 +104,7 @@ cR {
               common.fadeInScaleUpTransition {
                 transformOrigin = "inherit",
                 duration = ".2s",
-                enterScale = ".9",
+                enterScale = .9,
                 originalTransform = "translateX(-50%) translateY(-50%)",
                 originalTransition = "",
               }
@@ -106,4 +115,4 @@ cR {
     }
   }
 }
-style:render()
+print(style:render())
