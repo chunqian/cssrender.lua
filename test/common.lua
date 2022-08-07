@@ -7,6 +7,10 @@
 local css_render = require("../cssr")
 local cR = css_render().c
 
+local function cash(f)
+  return f[1]()
+end
+
 local common = {}
 
 local style = {
@@ -43,45 +47,37 @@ local style = {
 }
 
 common.fadeInScaleUpTransition = function(options)
-  local function leave(opt)
-    local leaveStr = "opacity "
-                    ..opt.duration.." "..style.cubicBezierEaseIn..", "
-                    .."transform "
-                    ..opt.duration.." "..style.cubicBezierEaseIn.." "
-    if opt.originalTransition ~= "" then
-      leaveStr = leaveStr
-                ..", "
-                ..opt.originalTransition
-    end
-    return leaveStr
-  end
-
-  local function enter(opt)
-    local enterStr = "opacity "
-                    ..opt.duration.." "..style.cubicBezierEaseOut..", "
-                    .."transform "
-                    ..opt.duration.." "..style.cubicBezierEaseOut.." "
-    if opt.originalTransition ~= "" then
-      enterStr = enterStr
-                ..", "
-                ..opt.originalTransition
-    end
-    return enterStr
-  end
-
   local cnodeList = {
     cR {
       "&.fade-in-scale-up-transition-leave-active",
       {
         transformOrigin = options.transformOrigin,
-        transition = leave(options),
+        transition = cash {
+          function ()
+            local leaveStr = "opacity "..options.duration.." "..style.cubicBezierEaseIn..", "
+                            .."transform "..options.duration.." "..style.cubicBezierEaseIn.." "
+            if options.originalTransition ~= "" then
+              leaveStr = leaveStr..", "..options.originalTransition
+            end
+            return leaveStr
+          end
+        },
       }
     },
     cR {
       "&.fade-in-scale-up-transition-enter-active",
       {
         transformOrigin = options.transformOrigin,
-        transition = enter(options),
+        transition = cash {
+          function()
+            local enterStr = "opacity "..options.duration.." "..style.cubicBezierEaseOut..", "
+                            .."transform "..options.duration.." "..style.cubicBezierEaseOut.." "
+            if options.originalTransition ~= "" then
+              enterStr = enterStr..", "..options.originalTransition
+            end
+            return enterStr
+          end
+        },
       }
     },
     cR {
