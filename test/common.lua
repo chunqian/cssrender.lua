@@ -5,7 +5,7 @@
 -----------------------------------------------------------]]
 
 local css_render = require("../cssr")
-local cR = css_render().c
+local cashC = css_render().c
 
 local function cash(f)
   return f[1]()
@@ -48,9 +48,8 @@ local style = {
 
 common.fadeInScaleUpTransition = function(options)
   local cnodeList = {
-    cR {
-      "&.fade-in-scale-up-transition-leave-active",
-      {
+    cashC {
+      "&.fade-in-scale-up-transition-leave-active", {
         transformOrigin = options.transformOrigin,
         transition = cash {
           function ()
@@ -64,9 +63,8 @@ common.fadeInScaleUpTransition = function(options)
         },
       }
     },
-    cR {
-      "&.fade-in-scale-up-transition-enter-active",
-      {
+    cashC {
+      "&.fade-in-scale-up-transition-enter-active", {
         transformOrigin = options.transformOrigin,
         transition = cash {
           function()
@@ -80,16 +78,14 @@ common.fadeInScaleUpTransition = function(options)
         },
       }
     },
-    cR {
-      "&.fade-in-scale-up-transition-enter-from, &.fade-in-scale-up-transition-leave-to",
-      {
+    cashC {
+      "&.fade-in-scale-up-transition-enter-from, &.fade-in-scale-up-transition-leave-to", {
         opacity = 0,
         transform = options.originalTransform.." ".."scale("..options.enterScale..")"
       }
     },
-    cR {
-      "&.fade-in-scale-up-transition-leave-from, &.fade-in-scale-up-transition-enter-to",
-      {
+    cashC {
+      "&.fade-in-scale-up-transition-leave-from, &.fade-in-scale-up-transition-enter-to", {
         opacity = 1,
         transform = options.originalTransform.." ".."scale(1)"
       }
