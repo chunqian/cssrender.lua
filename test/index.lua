@@ -8,15 +8,14 @@
 package.path = package.path .. ";../?.lua"
 
 local css_render = require("../cssr")
-local cR = css_render().c
+local cashC = css_render().c
 
 local common = require("common")
 
 local style = 
-cR {
-  cR {
-    "data-table",
-    {
+cashC {
+  cashC {
+    "data-table", {
       width = "100%",
       fontSize = "var(--n-font-size)",
       display = "flex",
@@ -29,46 +28,37 @@ cR {
       ["--n-merged-td-color-striped"] = "var(--n-td-color-striped)",
     },
     {
-      cR {
-        "data-table-wrapper",
-        {
+      cashC {
+        "data-table-wrapper", {
           flexGrow = 1,
           display = "flex",
           flexDirection = "column",
         }
       },
-      cR {
-        "flex-height",
-        {
-          cR {
-            ">",
-            {
-              cR {
-                "data-table-wrapper",
-                {
-                  cR {
-                    ">",
-                    {
-                      cR {
-                        "data-table-base-table",
-                        {
+      cashC {
+        "flex-height", {
+          cashC {
+            ">", {
+              cashC {
+                "data-table-wrapper", {
+                  cashC {
+                    ">", {
+                      cashC {
+                        "data-table-base-table", {
                           display = "flex",
                           flexDirection = "column",
                           flexGrow = 1,
                         },
                         {
-                          cR {
-                            ">",
-                            {
-                              cR {
-                                "data-table-base-table-body",
-                                {
+                          cashC {
+                            ">", {
+                              cashC {
+                                "data-table-base-table-body", {
                                   flexBasis = 0,
                                 },
                                 {
-                                  cR {
-                                    "&:last-child",
-                                    {
+                                  cashC {
+                                    "&:last-child", {
                                       flexGrow = 1,
                                     }
                                   }
@@ -86,12 +76,10 @@ cR {
           }
         }
       },
-      cR {
-        ">",
-        {
-          cR {
-            "base-loading",
-            {
+      cashC {
+        ">", {
+          cashC {
+            "base-loading", {
               color = "var(--n-loading-color)",
               fontSize = "var(--n-loading-size)",
               position = "absolute",
