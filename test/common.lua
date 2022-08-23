@@ -5,7 +5,7 @@
 -----------------------------------------------------------]]
 
 local css_render = require("../cssr")
-local cashC = css_render().c
+local C = css_render().c
 
 local function cash(f)
   return f[1]()
@@ -48,7 +48,7 @@ local style = {
 
 common.fadeInScaleUpTransition = function(options)
   local cnodeList = {
-    cashC {
+    C {
       "&.fade-in-scale-up-transition-leave-active", {
         transformOrigin = options.transformOrigin,
         transition = cash {
@@ -63,7 +63,7 @@ common.fadeInScaleUpTransition = function(options)
         },
       }
     },
-    cashC {
+    C {
       "&.fade-in-scale-up-transition-enter-active", {
         transformOrigin = options.transformOrigin,
         transition = cash {
@@ -78,13 +78,13 @@ common.fadeInScaleUpTransition = function(options)
         },
       }
     },
-    cashC {
+    C {
       "&.fade-in-scale-up-transition-enter-from, &.fade-in-scale-up-transition-leave-to", {
         opacity = 0,
         transform = options.originalTransform.." ".."scale("..options.enterScale..")"
       }
     },
-    cashC {
+    C {
       "&.fade-in-scale-up-transition-leave-from, &.fade-in-scale-up-transition-enter-to", {
         opacity = 1,
         transform = options.originalTransform.." ".."scale(1)"

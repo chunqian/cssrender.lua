@@ -8,13 +8,13 @@
 package.path = package.path .. ";../?.lua"
 
 local css_render = require("../cssr")
-local cashC = css_render().c
+local C = css_render().c
 
 local common = require("common")
 
 local style = 
-cashC {
-  cashC {
+C {
+  C {
     "data-table", {
       width = "100%",
       fontSize = "var(--n-font-size)",
@@ -28,36 +28,36 @@ cashC {
       ["--n-merged-td-color-striped"] = "var(--n-td-color-striped)",
     },
     {
-      cashC {
+      C {
         "data-table-wrapper", {
           flexGrow = 1,
           display = "flex",
           flexDirection = "column",
         }
       },
-      cashC {
+      C {
         "flex-height", {
-          cashC {
+          C {
             ">", {
-              cashC {
+              C {
                 "data-table-wrapper", {
-                  cashC {
+                  C {
                     ">", {
-                      cashC {
+                      C {
                         "data-table-base-table", {
                           display = "flex",
                           flexDirection = "column",
                           flexGrow = 1,
                         },
                         {
-                          cashC {
+                          C {
                             ">", {
-                              cashC {
+                              C {
                                 "data-table-base-table-body", {
                                   flexBasis = 0,
                                 },
                                 {
-                                  cashC {
+                                  C {
                                     "&:last-child", {
                                       flexGrow = 1,
                                     }
@@ -76,9 +76,9 @@ cashC {
           }
         }
       },
-      cashC {
+      C {
         ">", {
-          cashC {
+          C {
             "base-loading", {
               color = "var(--n-loading-color)",
               fontSize = "var(--n-loading-size)",
